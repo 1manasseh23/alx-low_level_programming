@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-* maim - Entry point
+* main - Entry point
 * Description: Print with proper grammar, but the outcome is a piece of art,
 * Return: always 0 (success)
 */

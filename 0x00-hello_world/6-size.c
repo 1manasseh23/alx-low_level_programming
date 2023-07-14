@@ -1,8 +1,8 @@
 #include <stdio.h>   
 /** 
-* main - main function 
-* Description: This is to print byte
-* Return: Always 0 (Success) 
+ * main - main function 
+ * Description: This is to print byte
+ * Return: Always 0 (Success) 
 */  
 int main(void) 
 {

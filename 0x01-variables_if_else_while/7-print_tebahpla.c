@@ -10,12 +10,12 @@
 
 int main(void)
 {
-	char za;
+	char miro;
 
-	for (za = 'z'; za >= 'a'; za--)
+	for (miro = 'z'; miro >= 'a'; miro--)
 	{
-		putchar(za);
-		putchar('\n');
+		putchar(miro);
 	}
+	putchar('\n');
 	return (0);
 }

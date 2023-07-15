@@ -15,7 +15,7 @@ int main(void)
 	for (alpbt = 'a'; alpbt <= 'z'; alpbt++)
 	{
 		putchar(alpbt);
-		putchar('\n');
 	}
+	putchar('\n');
 	return (0);
 }

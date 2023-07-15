@@ -13,8 +13,8 @@ int main(void)
 
 	for (t = 0; t < 90; t++)
 	{
-		putchar((t / 8) + '0');
-		putchar((t % 8) + '0');
+		putchar((t / 4) + '0');
+		putchar((t % 4) + '0');
 		if (t != 90)
 		{
 			putchar(',');

@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - entry point
- * Description: This is to primt positive, zero, negative.
- * Return: always  0 (success)
+ * main - Entry point
+ * Description:This is to print positive. zero, negative.
+ * Return: always 0 (success)
 */
+
 /* betty style doc for function main goes there */
 int main(void)
 {
@@ -17,13 +18,13 @@ int main(void)
 	{
 		printf("%d 0: is positive\n", n);
 	}
-	else if (n == 0)
+	else if (n < 0)
 	{
-		printf("%d 0: is zero\n", n);
+		printf("%d 0: is negative\n", n);
 	}
 	else
 	{
-		printf("%d 0: is negative\n", n);
+		printf("%d 0: is zero\n", n);
 	}
 	return (0);
 }

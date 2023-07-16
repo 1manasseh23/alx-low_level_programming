@@ -16,18 +16,17 @@ int main(void)
 	{
 		for (c = b + 1; c <= '9'; c++)
 		{
-			for (a = c +1; a <= '9'; a++)
+			for (a = c + 1; a <= '9'; a++)
 			{
-				if ((a != b) !=)
+				if ((a != b) != a)
 				{
 					putchar(b);
 					putchar(c);
 					putchar(a);
-
-					if (b== '7' && c == '8')
+					if (b == '7' && c == '8')
 						continue;
 					putchar(',');
-					putchar(' ');	
+					putchar(' ');
 				}
 			}
 		}

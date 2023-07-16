@@ -9,20 +9,23 @@
 
 int main(void)
 {
-	int t;
+	int t, s;
 
-	for (t = 0; t < 90; t++)
+	for (t = '0'; t < '9'; t++)
 	{
-		putchar((t / 4) + '0');
-		putchar((t % 4) + '0');
-		if (t != 90)
+		for (s = t + 1; s <= '9'; s++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (s != t)
+			{
+				putchar(t);
+				putchar(s);
+				if (t == '8' && s == '9')
+					continue;
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	putchar('\n');
-
-
 	return (0);
 }

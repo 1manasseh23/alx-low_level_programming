@@ -1,26 +1,52 @@
 #include "main.h"
 /**
- * rot13 - a function that encode a string using rot13.
- * @s: An input string to encode using rot13
- * Return: An encode string
+ * base10 - power in 10 base
+ * @n: an exponent
+ * Return: returns 10 to power exponent
  */
-char *rot13(char *s)
+int base10(int n)
 {
-	int i;
-	int n;
-	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int base = 10;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (n > 0)
 	{
-		for (n = 0; n < 52; n++)
+		base *= 10;
+		n--;
+	}
+	return (base);
+}
+
+/**
+ * print_number - prints integers enters as parameters using piutchar
+ * @n: integer to print
+ * Return: void
+ */
+void print_number(int n)
+{
+	int power;
+
+	power = base10(8);
+
+
+	if (n < 0)
+	{
+		_putchar('-');
+		n *= -1;
+	}
+	if (n == 0)
+	{
+		_putchar('0');
+	}
+	else
+	{
+		while (n / power == 0)
+			power /= 10;
+
+		while (power >= 1)
 		{
-			if (s[i] == data1[n])
-			{
-				s[i] = data1[n];
-				break;
-			}
+			_putchar((n / power) + '0');
+			n %= power;
+			power /= 10;
 		}
 	}
-	return (s);
 }

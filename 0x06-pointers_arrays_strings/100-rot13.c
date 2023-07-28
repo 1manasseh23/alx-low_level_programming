@@ -1,52 +1,30 @@
 #include "main.h"
-/**
- * base10 - power in 10 base
- * @n: an exponent
- * Return: returns 10 to power exponent
- */
-int base10(int n)
-{
-	int base = 10;
-
-	while (n > 0)
-	{
-		base *= 10;
-		n--;
-	}
-	return (base);
-}
+#include <stdio.h>
 
 /**
- * print_number - prints integers enters as parameters using piutchar
- * @n: integer to print
- * Return: void
+ * rot13 - encoder rot13
+ * @s: pointer to string params
+ *
+ * Return: *s
  */
-void print_number(int n)
+
+char *rot13(char *s)
 {
-	int power;
+	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	power = base10(8);
-
-
-	if (n < 0)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		_putchar('-');
-		n *= -1;
-	}
-	if (n == 0)
-	{
-		_putchar('0');
-	}
-	else
-	{
-		while (n / power == 0)
-			power /= 10;
-
-		while (power >= 1)
+		for (j = 0; j < 52; j++)
 		{
-			_putchar((n / power) + '0');
-			n %= power;
-			power /= 10;
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+				break;
+			}
 		}
 	}
+	return (s);
 }

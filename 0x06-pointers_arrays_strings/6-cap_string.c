@@ -6,37 +6,21 @@
  */
 char *cap_string(char *s)
 {
-	int j = 0;
+	int a;
 
-	while (s[j])
+	if (s[0] >= 'a' && s[0] <= 'z')
+		s[0] = s[0] - ' ';
+
+	for (a = 1; s[a] != '\0'; a++)
 	{
-		if (j == 0 && (s[j] >= 'a' && s[j] <= 'z'))
+		if ((s[a - 1] == ' ' || s[a - 1] == '\n' || s[a - 1] == '\t'
+		     || s[a - 1] == ',' || s[a - 1] == ';' || s[a - 1] == '!'
+		     || s[a - 1] == '?' || s[a - 1] == '"' || s[a - 1] == '('
+		     || s[a - 1] == ')' || s[a - 1] == '{' || s[a - 1] == '}'
+		     || s[a - 1] == '.') && (s[a] > 'a' && s[a] < 'z'))
 		{
-			s[j] -= 32;
+			s[a] = s[a] - ' ';
 		}
-		if (check_seperators(s[j]) && (s[j + 1] >= 'a' && s[j + 1] <= 'z'))
-		{
-			s[j + 1] -= 32;
-		}
-		j++;
 	}
 	return (s);
-}
-/**
- * check_seperators - separators of word: space, tabulation, new line,
- * ,, ;, ., !, ?, ", (, ), {, and }
- * @c: an input character
- * Return: 1 if seperator, 0 otherwise
- */
-int check_seperators(char c)
-{
-	int a = 0;
-	char seperators[13] = { ' ', '\t', '\n', ',', ';', '.', '!', '?',
-		'"', '(', ')', '{', '}' };
-	for (; a < 13; a++)
-	{
-		if (c == seperators[a])
-			return (1);
-	}
-	return (0);
 }

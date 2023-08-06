@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 /**
- * main - A programthat prints minimum coins to make change for and amount of money
+ * main - A programthat prints minimum coins to make change for and
+ * amount of money.
  * @argc: The arguements' counter
  * @argv: The arguement's values
- * Return: 1 if the number of arguements passed is not exactly or 0 in otherwise
+ * Return: 1 if the number of arguements passed is not exactly
+ * or 0 in otherwise.
  */
 int main(int argc, char **argv)
 {
@@ -46,9 +48,6 @@ int main(int argc, char **argv)
 		printf("%d\n", coins);
 		return (0);
 	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
+	printf("Error\n");
+	return (1);
 }

@@ -3,11 +3,11 @@
 
 
 /**
- * main - A program that prints its name, followed by a new line.
- * @argc: An input integer
- * @argv: An input string
+ * main - This the main function of the program. its takes two parameter,
+ * @argc: Argument count
+ * @argv: Argument value, a string that come after calling function
  *
- * Reyurn: 0
+ * Return: 0 success.
  */
 
 int main(int argc, char *argv[])

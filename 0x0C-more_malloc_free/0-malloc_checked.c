@@ -13,7 +13,7 @@
 
 void *malloc_checked(unsigned int b)
 {
-	char *alt;
+	void *alt;
 
 	alt = malloc(b);
 

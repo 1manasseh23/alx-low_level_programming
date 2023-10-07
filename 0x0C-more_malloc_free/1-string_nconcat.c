@@ -14,7 +14,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int len_1 = 0, len_2 = 0;
 	char *rstl;
-	unsigned int x = 0, y = 0;
+	unsigned int x, y;
 
 	if (s1 == NULL)
 	{
@@ -34,10 +34,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (rstl == NULL)
 		return (NULL);
 
-	for (; s1[x]; x++)
+	for (x = 0; s1[x]; x++)
 		rstl[x] = s1[x];
 
-	for (; y < n && s2[y]; y++)
+	for (y = 0; y < n && s2[y]; y++)
 		rstl[x + y] = s2[y];
 
 	rstl[x + y] = '\0';

@@ -23,6 +23,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	while (s1[len_1])
 		len_1++;
+
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+
 	while (s2[len_2])
 		len_2++;
 

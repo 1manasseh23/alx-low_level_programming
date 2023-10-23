@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
-#include <stddef.h>
+
 /**
  * print_listint - A function that  prints all the elements of a listint_t list
  * @h: Head of the first node of the list

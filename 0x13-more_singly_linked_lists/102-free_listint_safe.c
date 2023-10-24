@@ -10,14 +10,31 @@
 size_t free_listint_safe(listint_t **h)
 {
 	size_t counter = 0;
+	listint_t *cur = *h;
+	listint_t *addrs[1024];
 
-	while (*h)
+	while (*h != NULL)
 	{
-		listint_t *temp = *h;
-		*h = (*h)->next;
-		free(temp);
+		size_t i;
+		listint_t *temp;
+
+		for (i = 0; i < counter; i++)
+		{
+			if (cur == addrs[i])
+			{
+				*h = NULL;
+				exit(98);
+			}
+		}
+
+		addrs[counter] = cur;
 		counter++;
+		temp = cur->next;
+		free(cur);
+		cur = temp;
 	}
 
+	*h = NULL;
+	
 	return (counter);
 }

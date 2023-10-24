@@ -13,7 +13,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *cur = *h;
 	listint_t *addrs[1024];
 
-	while (*h != NULL)
+	while (h)
 	{
 		size_t i;
 		listint_t *temp;

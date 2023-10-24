@@ -11,42 +11,26 @@ size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *cur = head;
 	size_t counter = 0;
-	const listint_t **addrs = NULL;
+	const listint_t *addrs[1024];
 
-	while (cur)
+	while (cur != NULL)
 	{
 		size_t i;
-		int found = 0;
 
 		for (i = 0; i < counter; i++)
 		{
 			if (cur == addrs[i])
 			{
-				found = 1;
-				break;
+				printf("-> [%p] %d\n", (void *)cur, cur->n);
+				return (counter);
 			}
 		}
 
-		if (found)
-		{
-			printf("[%p] %d\n", (void *)cur, cur->n);
-			break;
-		}
-
 		printf("[%p] %d\n", (void *)cur, cur->n);
-
+		addrs[counter] = cur;
 		counter++;
-		addrs = realloc(addrs, counter * sizeof(listint_t *));
-		if (!addrs)
-		{
-			free(addrs);
-			exit(98);
-		}
-		addrs[counter - 1] = cur;
 		cur = cur->next;
 	}
-
-	free(addrs);
 
 	return (counter);
 }

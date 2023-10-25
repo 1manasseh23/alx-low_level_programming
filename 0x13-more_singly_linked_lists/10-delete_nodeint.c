@@ -40,6 +40,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		temp->next = cnode->next;
 		free(cnode);
 	}
-	return (0);
+	return (1);
 
 }

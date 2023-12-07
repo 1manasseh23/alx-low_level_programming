@@ -6,7 +6,7 @@
  * node at the end of a dlistint_t list
  * @head: Pointto a point of the node list
  * @n: Value of the new adding node
- * Retun: Address of new node or NULL
+ * Return: Address of new node or NULL
  */
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)

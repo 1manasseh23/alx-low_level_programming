@@ -5,7 +5,7 @@
  * sum_dlistint - A function that returns the sum of all
  * the data (n) of a dlistint_t linked list.
  * @head: Pionter to the node in list
- * Rrturn: Sum of numbers add
+ * Return: Sum of (n)
  */
 int sum_dlistint(dlistint_t *head)
 {

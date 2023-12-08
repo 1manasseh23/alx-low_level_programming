@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 def is_palindrome(n):
-	return str(n) == str(n)[::-1]
+    return str(n) == str(n)[::-1]
+
+
 bigest_palindronme = 0
 for j in range(100, 1000):
-	for y in range(100, 1000):
-		product = j * y
-		if is_palindrome(product) and product > bigest_palindrome:
-			bigest_palindrome = product
+    for y in range(100, 1000):
+        product = j * y
+        if is_palindrome(product) and product > bigest_palindrome:
+            bigest_palindrome = product
 with open('102-result', 'w') as file:
-	file.write(str(bigest_palindrome))
+    file.write(str(bigest_palindrome))

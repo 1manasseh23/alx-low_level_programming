@@ -4,8 +4,8 @@ def is_palindrome(n):
 bigest_palindronme = 0
 for j in range(100, 1000):
 	for y in range(100, 1000):
-		qlty = j * y
-		if is_palindrome(qlty) and qlty > bigest_palindrome:
-			bigest_palindrome = qlty
+		product = j * y
+		if is_palindrome(product) and product > bigest_palindrome:
+			bigest_palindrome = product
 with open('102-result', 'w') as file:
 	file.write(str(bigest_palindrome))

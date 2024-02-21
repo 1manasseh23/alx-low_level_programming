@@ -1,3 +1,4 @@
+# Creating the variable
 CC = $(shell which gcc)
 SRC = main.c school.c
 

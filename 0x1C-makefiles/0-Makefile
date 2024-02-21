@@ -1,0 +1,22 @@
+# Name of the executable
+EXECUTABLE = school
+
+# Source files
+SRC_FILES = main.c school.c
+
+# Compile flags (adjust as needed)
+CFLAGS = -Wall -g
+
+# Build the executable
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(SRC_FILES)
+	gcc $(CFLAGS) $(SRC_FILES) -o $(EXECUTABLE)
+
+# Clean up object files
+clean:
+	rm -f $(EXECUTABLE) *.o
+
+# Run the executable
+run:
+	./$(EXECUTABLE)

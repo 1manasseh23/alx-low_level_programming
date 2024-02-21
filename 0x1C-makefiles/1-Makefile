@@ -1,24 +1,40 @@
-# Creating the variable
-CC = $(shell which gcc)
+# Makefile for compiling the 'school' program
+
+# Compiler to be used
+CC = gcc
+
+# Source files (add more if needed)
 SRC = main.c school.c
 
-# Define object files (generated automatically)
-OBJECTS = $(SRC:.c=.o)
+# Object files (automatically derived from source files)
+OBJ = $(SRC:.c=.o)
 
-# Define the build rule
-all: $(EXECUTABLE)
+# Name of the executable
+NAME = school
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) -o $@ $(OBJECTS)
+# Compilation flags (optional)
+CFLAGS = -Wall -Werror -pedantic
 
-# Compile individual source files (implicitly generates object files)
+# Default rule: compile all source files
+all: $(NAME)
+
+# Rule to compile object files
 %.o: %.c
-	$(CC) -c $(CFLAGS) $<
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Define the clean rule
+# Rule to link object files into the executable
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+# Clean up intermediate files
 clean:
-	rm -f $(EXECUTABLE) $(OBJECTS)
+	rm -f $(OBJ)
 
-# Run the executable
-run:
-	./$(EXECUTABLE)
+# Clean up all generated files
+fclean: clean
+	rm -f $(NAME)
+
+# Rebuild everything
+re: fclean all
+
+.PHONY: all clean fclean re

@@ -1,0 +1,23 @@
+CC = $(shell which gcc)
+SRC = main.c school.c
+
+# Define object files (generated automatically)
+OBJECTS = $(SRC:.c=.o)
+
+# Define the build rule
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) -o $@ $(OBJECTS)
+
+# Compile individual source files (implicitly generates object files)
+%.o: %.c
+	$(CC) -c $(CFLAGS) $<
+
+# Define the clean rule
+clean:
+	rm -f $(EXECUTABLE) $(OBJECTS)
+
+# Run the executable
+run:
+	./$(EXECUTABLE)
